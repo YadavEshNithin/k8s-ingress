@@ -21,6 +21,7 @@ spec:
       containers:
         - name: app-2
           image: yadaveshnithin/app-2:v1
+          imagePullPolicy: Always
         # - name: nginx
         #   image: nginx:stable-perl
 
