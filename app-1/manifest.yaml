@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-1
+  labels:
+    purpose: ingress
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      purpose: ingress
+      project: roboshop
+      environment: dev
+  template:
+    metadata: 
+      labels:
+        purpose: ingress
+        project: roboshop
+        environment: dev
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+        # - name: nginx
+        #   image: nginx:stable-perl
