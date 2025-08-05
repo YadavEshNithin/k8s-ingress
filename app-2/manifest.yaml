@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-1
+  name: app-2
   labels:
     purpose: ingress
 spec:
@@ -29,7 +29,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-1
+  name: app-2
   labels:
     purpose: ingress
 spec:
@@ -47,7 +47,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-1
+  name: app-2
   alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
   alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:315069654700:certificate/806e53c3-3894-49ff-96c7-fbd7c3b753ff
   alb.ingress.kubernetes.io/scheme: internet-facing
@@ -56,14 +56,14 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: "app-1.rshopsdaws84s.site"
+  - host: "app-2.rshopsdaws84s.site"
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: app-1
+            name: app-2
             port:
               number: 80
   
