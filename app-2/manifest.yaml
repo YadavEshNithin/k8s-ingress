@@ -19,8 +19,8 @@ spec:
         environment: dev
     spec:
       containers:
-        - name: nginx
-          image: nginx
+        - name: app-2
+          image: yadaveshnithin/app-2:v1
         # - name: nginx
         #   image: nginx:stable-perl
 
